@@ -1,6 +1,7 @@
 package net.cryptodanyliuk.main;
 
-import net.cryptodanyliuk.frequency.FrequencyAnalyzer;
+import net.cryptodanyliuk.frequency.BigramFrequencyAnalyzer;
+import net.cryptodanyliuk.frequency.CharacterFrequencyAnalyzer;
 import net.cryptodanyliuk.utils.FileCleaner;
 
 import java.io.File;
@@ -18,9 +19,14 @@ public class Main {
 //
 //        fileCleaner.cleanFile(path);
 
-        FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer(alph, path);
-        frequencyAnalyzer.analyze();
-        frequencyAnalyzer.printResults();
+//        CharacterFrequencyAnalyzer frequencyAnalyzer = new CharacterFrequencyAnalyzer(alph, path);
+//        frequencyAnalyzer.analyze();
+//        frequencyAnalyzer.printResults();
+
+        BigramFrequencyAnalyzer bigramFrequencyAnalyzer = new BigramFrequencyAnalyzer(alph, path);
+        bigramFrequencyAnalyzer.analyze();
+        bigramFrequencyAnalyzer.printCrossingResult();
+        bigramFrequencyAnalyzer.printNonCrossResult();
 
     }
 }

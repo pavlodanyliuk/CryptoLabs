@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class FrequencyAnalyzer {
+public class CharacterFrequencyAnalyzer {
 
     private String doubleFormat = "#0.00";
 
@@ -18,7 +18,7 @@ public class FrequencyAnalyzer {
     private Map<Character, MutableInt> quantity;
     private Map<Character, Double> results;
 
-    public FrequencyAnalyzer ( String alphabet, String fileName ){
+    public CharacterFrequencyAnalyzer ( String alphabet, String fileName ){
 
         this.alphabet = alphabet;
         this.fileName = fileName;
@@ -34,7 +34,8 @@ public class FrequencyAnalyzer {
 
         try(
                 FileReader reader = new FileReader(fileName)
-                ){
+        )
+        {
 
             int symbol;
             char lit;
@@ -73,7 +74,7 @@ public class FrequencyAnalyzer {
 
         return sortedMap;
     }
-    
+
 
     private void init(){
         for(char lit : alphabet.toCharArray()){
