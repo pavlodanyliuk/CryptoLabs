@@ -55,7 +55,7 @@ public class CharacterFrequencyAnalyzer {
 
     public void printResults(){
 
-        Map<Character, Double> map = getResults();
+        Map<Character, Double> map = getSortedMap();
 
         System.out.println("Character | %");
 
@@ -66,13 +66,17 @@ public class CharacterFrequencyAnalyzer {
     }
 
 
-    public Map<Character, Double> getResults(){
+    public Map<Character, Double> getSortedMap(){
         ValueComparator comparator = new ValueComparator(results);
         TreeMap<Character, Double> sortedMap = new TreeMap<>(comparator);
 
         sortedMap.putAll(results);
 
         return sortedMap;
+    }
+
+    public Map<Character, Double> getResults(){
+        return results;
     }
 
 
