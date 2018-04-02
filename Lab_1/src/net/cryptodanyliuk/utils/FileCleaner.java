@@ -37,7 +37,8 @@ public class FileCleaner {
                 while((symb = fileReader.read()) != -1){
                     chSymb = Character.toLowerCase((char)symb);
 
-                    if(!alphabet.contains(Character.toString(chSymb))) chSymb = ' ';
+                    if(!alphabet.contains(Character.toString(chSymb)))
+                        chSymb = ' ';
 
                     if(chSymb == ' '){
                         if(isPrevSpace) continue;

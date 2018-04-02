@@ -1,3 +1,10 @@
+/**
+*Practicum No. 1
+*Danyliuk&Trifonov
+*FB-51
+**/
+
+
 package net.cryptodanyliuk.main;
 
 import net.cryptodanyliuk.entropy.EntropyCalculator;
