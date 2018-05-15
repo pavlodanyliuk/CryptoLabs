@@ -21,9 +21,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        String alph = "абвгдежзийклмнопрстуфхцчшщъыьэюя ";
+        String alph = "абвгдежзийклмнопрстуфхцчшщъыьэюя";
 
-        String path = "resourses/text";
+        String path = "resourses/cryptV";
 
         FileCleaner fileCleaner = new FileCleaner(alph);
 

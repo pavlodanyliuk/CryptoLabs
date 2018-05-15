@@ -1,9 +1,15 @@
+
+
+/**
+ *Practicum No. 1
+ *Danyliuk&Trifonov
+ *FB-51
+ **/
+
 package main;
 
 import shiffre.ChiffreDeVigenere;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -18,7 +24,7 @@ public class Main {
                 "три", // 3
                 "клас", // 4
                 "пьить", // 5
-                "суперпуперключ" // 14
+                "суперпуперключдужедовгий" // 14
         };
 
         String fileNameIn = "resources/opentext";
@@ -34,11 +40,12 @@ public class Main {
          * 2nd TASK
          */
 
-        System.out.println("Open text : " + ChiffreDeVigenere.calcMappingIndex(fileNameIn));
+        System.out.println("Length of key | Index");
+        System.out.println("            - | " + ChiffreDeVigenere.calcMappingIndex(fileNameIn));
 
         for(int i = 0; i <keys.length; i++) {
             ChiffreDeVigenere.encrypt(keys[i], fileNameIn, fileNameOut + i);
-            System.out.println( "Length of key = " + keys[i].length() + " : " + ChiffreDeVigenere.calcMappingIndex(fileNameOut + i));
+            System.out.println( "            "+ keys[i].length() + " | " + ChiffreDeVigenere.calcMappingIndex(fileNameOut + i));
 
         }
 
@@ -46,12 +53,14 @@ public class Main {
          * 3rd TASK
          */
 
-        ChiffreDeVigenere.findKey("resources/crypt");
+        String cryptFileName = "resources/cryptV_edited";
+
+        ChiffreDeVigenere.findKey(cryptFileName);
 
         //Key founded: возвращениеджинна
-        String key = "возвращениеджинна";
+        String key = "вшекспирбуря";
 
-        ChiffreDeVigenere.decrypt(key, "resources/crypt", "resources/decrypt");
+        ChiffreDeVigenere.decrypt(key, cryptFileName, cryptFileName + "_decrypt");
 
 
     }
