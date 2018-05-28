@@ -1,6 +1,7 @@
 package net.kamai.java.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MathSuperMan {
@@ -9,12 +10,20 @@ public class MathSuperMan {
         super();
     }
 
-    public static void resolveFkProblemLineSrav (int a, int b, int mod){
+    public static List<Integer> resolveFkProblemLineSrav (int a, int b, int mod){
+
+
+        a = onlyPositive(a, mod);
+        b = onlyPositive(b, mod);
+
+
         if( gcd(a, mod) == 1){
-            System.out.println(easyFkVariant(a, b, mod));
+            return Arrays.asList(easyFkVariant(a, b, mod));
         } else if( gcd(a, mod) > 1){
-            System.out.println(hardFkVariant(a, b, mod, gcd(a, mod)));
+            return hardFkVariant(a, b, mod, gcd(a, mod));
         }
+
+        return null;
 
     }
 
@@ -47,11 +56,11 @@ public class MathSuperMan {
             old_t = provT;
         }
 
-        System.out.println("Bézout coefficients:" + old_s + ", " + old_t);
-
-        System.out.println("greatest common divisor:" + old_r );
-
-        System.out.println("quotients by the gcd:" + t + ", " + s);
+//        System.out.println("Bézout coefficients:" + old_s + ", " + old_t);
+//
+//        System.out.println("greatest common divisor:" + old_r );
+//
+//        System.out.println("quotients by the gcd:" + t + ", " + s);
 
         return old_s;
     }
@@ -67,6 +76,7 @@ public class MathSuperMan {
         }
 
         result = (result * b) % mod;
+        result = onlyPositive(result, mod);
 
         return result;
     }
@@ -104,10 +114,11 @@ public class MathSuperMan {
         return gcd(b, a % b);
     }
 
-    public static void extended_gcd (int a, int b) {
-
-
-
-
+    public static int onlyPositive (int num, int mod){
+        while (num < 0) {
+            num += mod;
+        }
+        return num;
     }
+
 }
